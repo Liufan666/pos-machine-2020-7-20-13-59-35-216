@@ -23,7 +23,7 @@
 # 上下文图
 ![avatar](contextmap.png)
 
-#PDCA
+# PDCA
 ## plan：
 计划一个小时做完任务
 ## do：
