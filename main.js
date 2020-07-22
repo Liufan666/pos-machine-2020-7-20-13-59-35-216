@@ -55,7 +55,7 @@ function getTotalPrice(cartItemDetailsWithTotalPrice){
 
 }
 function formatData(cartItemDetailsWithTotalPrice,total){
-    let str ="***<store earning no money>Receipt ***\n";
+    let str ='\n'+"***<store earning no money>Receipt ***\n";
     for(let i=0;i<cartItemDetailsWithTotalPrice.length;i++){
         str += "Name: "+cartItemDetailsWithTotalPrice[i].itemName+", Quantity: "+cartItemDetailsWithTotalPrice[i].quantity
         +", Unit price: "+cartItemDetailsWithTotalPrice[i].unitPrice+" (yuan), Subtotal: "
@@ -69,7 +69,7 @@ function formatData(cartItemDetailsWithTotalPrice,total){
 
 
 }
-function printrReceipt(barcodes){
+function printReceipt(barcodes){
     let res = getItemSubtotal(getItemInformation(getItemQuantity(barcodes)));
     console.log(formatData(res,getTotalPrice(res)));
 }
@@ -119,4 +119,7 @@ let database = [
   ];
 
 
-printrReceipt(barcodes);
+printReceipt(barcodes);
+module.exports = {
+    printReceipt
+};
